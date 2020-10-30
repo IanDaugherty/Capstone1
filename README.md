@@ -118,7 +118,9 @@ This demonstrates the real power of hosting a free-to-play game on a game store.
 ## Conclusion
 Here we have seen the value added to the Steam store by giving away a hugely popular game for free. Each time a user goes to play Dota 2, they must first launch Steam; this lands them on the store's front page listing of sales and new releases where more exposure will eventually lead to more sales over time.
 
-
+Potenential biases abound.
+- People who play Valve games on Steam may be biased towords Valve products, making purchases on Steam
+- Many users have 1 game with less than 1 hours of play time, greatly skewing any results
 ![O/P Ratio](/images/steamsale.jpg)
 
 
