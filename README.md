@@ -75,7 +75,7 @@ dota_users = duser_purchasecount.merge(duser_playtime, on = 'userid')
 Here we look at each user's games purchased, games played, and total time spent playing all games on Steam. 
 
 #### Analysis
-
+![Games vs Hours](/images/Users_owned_played.png)
 
 A bootstrap sampling method was used to compare sample means. The two groups were compared and plotted over 50,000 samples. 
 

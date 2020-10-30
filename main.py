@@ -61,4 +61,3 @@ def steam_user_totals(path):
 
 if __name__ == '__main__':
      steam = clean_steam_data(steam_path)
-     steam = format_name_col(steamdb, 'game')
