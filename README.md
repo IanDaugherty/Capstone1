@@ -1,17 +1,26 @@
-# Capstone
-First capstone project for galvanize
+# Galvanize Capstone
+### Exploritory data anlysis of a Steam user data base
 
-##Datasets
+![Steam logo](/images/Steam.jpg)
+
+## Datasets
 https://www.kaggle.com/tamber/steam-video-games
 A collection of hours played of 3600 unique games across 11350 users. 
 
 
 ### Context
-Steam is a digital, PC video game application which hosts a store front, as well as a library of your personal purchases, and more. The store often hosts sizable discounts on individual games, bundle deals, and multi-day "Steam Sales". Through the library you can download, install, and launch your games.
+Steam is a PC, video game application which hosts a store front, as well as a library of personal purchases, friends list, and more. The store often hosts sizable discounts on individual games, bundle deals, and multi-day "Steam Sales". 
 
+![Steam logo](/images/steamstore.jpeg)
+
+Through the library you can download, install, and launch your games.
+
+![Steam logo](/images/steam-lib.jpg)
+
+Our data gives us information on the individual's playtime for all games in their library. 
 
 ### EDA
-Our data gives us information on the playtime of specific games for individual users. Grouping by games can give us metrics for measuring popularity
+To get an idea of what the data looks like, we start by aggregating information about individial games. These groupings can give us metrics for measuring popularity, and an idea of what we are looking at. 
 
 ```
 top10_playtime = steam.sort_values('playtime', ascending=False)['playtime'].head(10)
@@ -31,20 +40,20 @@ The most common game to own from these 11,350 users was Dota 2. Not surprising c
 ![GamesPlayed](/images/top10gamesplayed.png)
 
 
-The top most played games looks similar, but we can really see Dota 2’s dominance on the Steam market, with almost 1,000,000 hours. 
+The top most played games looks similar, but we can really see Dota 2’s dominance on the Steam market, with almost 1,000,000 hours bewteen approximately 4800 users.
 
 
 ![GamesPlayed](/images/totaltime_pie.png)
 
 
-In fact, the combined playtime of the every game below the top 9 still does not equal that of Dota 2.
+In fact, the combined playtime of every game below the top 9 still does not equal that of Dota 2.
 
 
 
 
 ## A look at Dota 2 users
 
-A high percentage of the sample owning a free-to-play game may not be surprising, but it’s clearly a popular game otherwise. That raises the question of why a store would give away a highly successful game. Let’s look at the metrics available for the two groups: Players who own Dota 2, and players who do not. The data has both a ‘play’ and a ‘purchase’ categories in order to distinguish between games the users owns, and those that they have played.
+A high percentage of the sample owning a free-to-play game may not be surprising, but it’s clearly popular to play. That raises the question of why a store would give away a highly successful game. Let’s look at the metrics available for the two groups: Players who own Dota 2, and players who do not. 
 
 ```
 dota_owners = steam[(steam['game'] == "Dota 2")]['userid'].unique()
@@ -57,7 +66,7 @@ dota_users = duser_purchasecount.merge(duser_playtime, on = 'userid')
 
 ![Dota 2 Users graph](/images/Users_db.png)
 
-
+Here we look at each user's games played, purchased, and total time spent playing all games on Steam. 
 
 #### Analysis
 
@@ -89,17 +98,26 @@ axs[0].legend(('2.5%', '97.5%'))
 ![Games played bootstrap](/images/played_bootstrap.png)
 ![Time played](/images/playtime_bootstrap.png)
 
-We can conclude at the very least that Dota 2 player prefer to buy more games from the Steam store than Non-Dota 2 players. But more than that a ratio of the users games played of the games they own tells us more. 
+We can conclude that Dota 2 players prefer to buy more games from the Steam store than Non-Dota 2 players. Also, a ratio of the user's games played to the total number of games they own tells us more. 
 
 ![O/P Ratio](/images/op_bootstrap.png)
 
-This demonstrates the real power of hosting a free-to-play game on a game store. Dota 2 users own more, as well as spend more time playing video games on Steam, but they play less of their library then users who do not own Dota 2. 
+This demonstrates the real power of hosting a free-to-play game on a game store. Dota 2 users own more, and spend more time playing video games on Steam, but they play less of their overall library than users who do not own Dota 2. 
 
 ## Conclusion
-Here we have seen the value added to the Steam store by giving away a hugely popular game for free. Each time user wants to play Dota 2, they must first launch Steam, which lands them on the store's front page, list all the sales and new releases, where more exposures lead to more sales over time.
+Here we have seen the value added to the Steam store by giving away a hugely popular game for free. Each time a user goes to play Dota 2, they must first launch Steam, which lands them on the store's front page, which lists all the sales and new releases, where more exposure will eventually lead to more sales over time.
+
+
+![O/P Ratio](/images/steamsale.jpg)
+
+
 
 ## Further inquiries
 
--This data set is over six years old, videos games and the FTP model have only gotten more popular. A similar but updated data set would be interest to analyze in a similar way.
+
+-There are many users in both samples with less than one hour played. Should these be controlled for? Should it count that you 'played' a game if you loaded it up once, and never played it again? Do Dota players have more or less '<1.0 hour' games than non-Dota users?
 
 -Do other popular games share this relationship? Is it a matter of time spent playing video games in general or is it specific to Dota 2 players?
+
+
+-This data set is over six years old, videos games and the FTP model have only gotten more popular. A similar but updated data set would be interesting to analyze in a similar way.
