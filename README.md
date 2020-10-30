@@ -24,14 +24,24 @@ plt.savefig("images/top10gamesplayed.jpg")
 ```
 
 ![GamesPlayed](/images/topowned.png)
+
+
 The most common game to own from these 11,350 users was Dota 2. Not surprising considering it is a micro-transaction based, free-to-play game. Also not very surprising is that seven of the top ten games are owned by Valve, the parent company of steam.
 
 ![GamesPlayed](/images/top10gamesplayed.png)
+
+
 The top most played games looks similar, but we can really see Dota 2’s dominance on the Steam market, with almost 1,000,000 hours. 
 
 
 ![GamesPlayed](/images/totaltime_pie.png)
+
+
 In fact, the combined playtime of the every game below the top 9 still does not equal that of Dota 2.
+
+
+
+
 ## A look at Dota 2 users
 
 A high percentage of the sample owning a free-to-play game may not be surprising, but it’s clearly a popular game otherwise. That raises the question of why a store would give away a highly successful game. Let’s look at the metrics available for the two groups: Players who own Dota 2, and players who do not. The data has both a ‘play’ and a ‘purchase’ categories in order to distinguish between games the users owns, and those that they have played.
@@ -47,7 +57,11 @@ dota_users = duser_purchasecount.merge(duser_playtime, on = 'userid')
 
 ![Dota 2 Users graph](/images/Users_db.png)
 
+
+
 #### Analysis
+
+
 A bootstrap sampling method was used to compare sample means. The two groups where compared and plotted over 50,000 samples. 
 
 ```
@@ -86,5 +100,6 @@ Here we have seen the value added to the Steam store by giving away a hugely pop
 
 ## Further inquiries
 
--This data set is over six years old, videos games and the FTP model have only gotten more popular. A similar but updated data set would be interest to analyze in a similar way. 
+-This data set is over six years old, videos games and the FTP model have only gotten more popular. A similar but updated data set would be interest to analyze in a similar way.
+
 -Do other popular games share this relationship? Is it a matter of time spent playing video games in general or is it specific to Dota 2 players?
