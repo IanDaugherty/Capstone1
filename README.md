@@ -3,11 +3,8 @@
 
 ![Steam logo](/images/Steam.jpg)
 
-## Datasets
-https://www.kaggle.com/tamber/steam-video-games
-A collection of hours played of 3600 unique games across 11,350 users. 
 
-
+ 
 ### Context
 Steam is a PC video game application which hosts a store front as well as a library of personal purchases, friends list, and more. The store often hosts sizable discounts on individual games, bundle deals, and multi-day "Steam Sales." 
 
@@ -19,7 +16,16 @@ Through the library you can download, install, and launch your games.
 
 Our data gives us information on the individual's playtime for all games in their library. 
 
+## Datasets
+
+https://www.kaggle.com/tamber/steam-video-games
+A collection of hours played of 3600 unique games across 11,350 users. 
+
+![Raw import data set](/images/steam_raw.png)
+
+
 ### EDA
+
 We start by aggregating information about individial games. These groupings can give us metrics for measuring popularity and an idea of at what we are looking. 
 
 ```
@@ -40,7 +46,7 @@ The most common game to own from these 11,350 users was Dota 2. Not surprising c
 ![GamesPlayed](/images/top10gamesplayed.png)
 
 
-The top most-played games look similar between ownership and playtime, but we can really see Dota 2’s dominance on the Steam market, with almost 1,000,000 hours bewteen approximately 4,800 users.
+It would make sense that the top most played would look similar to most owned, but we can really see Dota 2’s dominance on the Steam market, with almost 1,000,000 hours bewteen approximately 4,800 users.
 
 
 ![TotalTime](/images/totaltime_pie.png)
